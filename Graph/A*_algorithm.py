@@ -38,7 +38,6 @@ def astar(graph, sr, sc, tr, tc):
 	opened.append(s_node)
 	while len(opened) > 0:
 		curr_i = find_min_f(opened)
-		print(opened[curr_i].x)
 		curr = opened[curr_i]
 		if curr.x == tr and curr.y == tc:
 			while curr:
@@ -66,16 +65,12 @@ def astar(graph, sr, sc, tr, tc):
 								l.f = l.f - temp + test_node.g
 	return None
 
-maze = [[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+maze = [
+	[0,0,0,0,0],
+	[0,0,0,0,0],
+	[0,0,0,0,0],
+	[0,0,0,1,0]
+]
 
-path = astar(maze, 0, 0, 7, 6)
+path = astar(maze, 0, 0, 3, 4)
 print(path)
